@@ -82,6 +82,19 @@ on the variables listed above cna chang the range of the variables.
 
 # Step 2 result
 
+Samara’s thoughts:
+
+Wyatt’s thoughts: The main variable is sales price, which means that its
+the price of each property sold in Ames. Its important because it shows
+the values of homes and allows us to look at how the other variables
+effect it.
+
+(Name) thoughts:
+
+(Name) thoughts: (Combined) As a team, we found that …
+
+# Step 3 result
+
 ``` r
 summary(ames$`Sale Price`)
 ```
@@ -123,23 +136,45 @@ outliers of very high price. There are properties with a sale price of
 
 (Combined) As a team, we found that …
 
-# Step 3 result
-
-Samara’s thoughts:
-
-Wyatt’s thoughts:
-
-(Name) thoughts:
-
-(Name) thoughts:
-
-(Combined) As a team, we found that …
-
 # Step 4 result
+
+``` r
+summary(ames$`TotalLivingArea (sf)`)
+```
+
+    ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
+    ##       0    1095    1460    1507    1792    6007     447
+
+``` r
+range(ames$`TotalLivingArea (sf)`, na.rm = TRUE)
+```
+
+    ## [1]    0 6007
+
+``` r
+ggplot(ames, aes(x = `TotalLivingArea (sf)`)) +
+  geom_histogram(bins = 25, fill = "blue", color = "red") +
+  labs(
+    title = "Distribution of Total Living Area",
+    x = "Total Living Area",
+    y = "Number of Homes"
+  )
+```
+
+    ## Warning: Removed 447 rows containing non-finite outside the scale range
+    ## (`stat_bin()`).
+
+![](README_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
 
 Samara’s work:
 
-Wyatt’s work:
+Wyatt’s work: Total living Area measures the interior living space of
+the home. The histogram shows that fewer home have large living space.
+It is right skewed meaning that large homes are not common. The
+relationship between them is positive as when one increases they both
+increase. This is also seen in 3 with some of the outliers. However,
+some smaller homes can sell for higher, meaning that there are other
+factors as well.
 
 (Name) work:
 

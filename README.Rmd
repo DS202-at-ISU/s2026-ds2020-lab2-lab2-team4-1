@@ -43,6 +43,17 @@ Wyatt's thoughts: The data set contains 6935 rows and 16 columns, where rows rep
 (Combined) As a team, we found that ...
 
 # Step 2 result
+
+Samara's thoughts:
+
+Wyatt's thoughts: The main variable is sales price, which means that its the price of each property sold in Ames. Its important because it shows the values of homes and allows us to look at how the other variables effect it. 
+
+(Name) thoughts:
+
+(Name) thoughts:
+(Combined) As a team, we found that ...
+
+# Step 3 result
 ```{r}
 summary(ames$`Sale Price`)
 range(ames$`Sale Price`, na.rm = TRUE)
@@ -71,21 +82,24 @@ Wyatt's thoughts: Houses range from 0 to 20500000 dollars with the median being 
 
 (Combined) As a team, we found that ...
 
-# Step 3 result
-Samara's thoughts:
-
-Wyatt's thoughts:
-
-(Name) thoughts:
-
-(Name) thoughts:
-
-(Combined) As a team, we found that ...
-
 # Step 4 result
+```{r}
+summary(ames$`TotalLivingArea (sf)`)
+range(ames$`TotalLivingArea (sf)`, na.rm = TRUE)
+
+
+ggplot(ames, aes(x = `TotalLivingArea (sf)`)) +
+  geom_histogram(bins = 25, fill = "blue", color = "red") +
+  labs(
+    title = "Distribution of Total Living Area",
+    x = "Total Living Area",
+    y = "Number of Homes"
+  )
+```
+
 Samara's work:
 
-Wyatt's work:
+Wyatt's work: Total living Area measures the interior living space of the home. The histogram shows that fewer home have large living space. It is right skewed meaning that large homes are not common. The relationship between them is positive as when one increases they both increase. This is also seen in 3 with some of the outliers. However, some smaller homes can sell for higher, meaning that there are other factors as well. 
 
 (Name) work:
 

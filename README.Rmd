@@ -17,3 +17,45 @@ Include your answers in this document (Rmd file). Make sure that it knits proper
 
 All submissions to the github repo will be automatically uploaded for grading once the due date is passed.
 Submit a link to your repository on Canvas (only one submission per team) to signal to the instructors that you are done with your submission.
+
+# Step 1 result
+Samara's thoughts:
+
+(Name) thoughts:
+
+(Name) thoughts:
+
+(Name) thoughts:
+
+(Combined) As a team, we found that ...
+
+# Step 2 result
+Samara's thoughts:
+
+(Name) thoughts:
+
+(Name) thoughts:
+
+(Name) thoughts:
+
+(Combined) As a team, we found that ...
+
+# Step 3 result
+Samara's thoughts:
+
+(Name) thoughts:
+
+(Name) thoughts:
+
+(Name) thoughts:
+
+(Combined) As a team, we found that ...
+
+# Step 4 result
+Samara's work:
+
+(Name) work:
+
+(Name) work:
+
+(Name) work:

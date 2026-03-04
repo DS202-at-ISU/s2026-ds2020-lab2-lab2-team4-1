@@ -43,9 +43,27 @@ Wyatt's thoughts: The data set contains 6935 rows and 16 columns, where rows rep
 (Combined) As a team, we found that ...
 
 # Step 2 result
+```{r}
+summary(ames$`Sale Price`)
+range(ames$`Sale Price`, na.rm = TRUE)
+```
+
+```{r}
+library(ggplot2)
+
+ggplot(ames, aes(x = `Sale Price`)) +
+  geom_histogram(bins = 25, fill = "blue", color = "red") +
+  labs(
+    title = "Distribution of Sale Prices in Ames",
+    x = "Sale Price",
+    y = "Number of Homes"
+  )
+```
+
+
 Samara's thoughts:
 
-Wyatt's thoughts:
+Wyatt's thoughts: Houses range from 0 to 20500000 dollars with the median being 170900. The distribution of sale prices is highly right skewed. This means that most homes sell for moderate prices with a few outliers of very high price. There are properties with a sale price of 0, which probably means that the data was incorrectly recorded.
 
 (Name) thoughts:
 
@@ -67,7 +85,7 @@ Wyatt's thoughts:
 # Step 4 result
 Samara's work:
 
-(Name) work:
+Wyatt's work:
 
 (Name) work:
 

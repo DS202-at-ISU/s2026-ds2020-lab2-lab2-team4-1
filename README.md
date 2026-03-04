@@ -68,7 +68,11 @@ glimpse(ames)
 
 Samara’s thoughts:
 
-Wyatt’s thoughts:
+Wyatt’s thoughts: The data set contains 6935 rows and 16 columns, where
+rows represent a residential property sale. Key variables include year
+built, acres, neighborhood, and TotalLivingArea. The main variable is
+Sale Price which represents the final sale price of the home. Depending
+on the variables listed above cna chang the range of the variables.
 
 (Name) thoughts:
 
@@ -78,9 +82,40 @@ Wyatt’s thoughts:
 
 # Step 2 result
 
+``` r
+summary(ames$`Sale Price`)
+```
+
+    ##     Min.  1st Qu.   Median     Mean  3rd Qu.     Max. 
+    ##        0        0   170900  1017479   280000 20500000
+
+``` r
+range(ames$`Sale Price`, na.rm = TRUE)
+```
+
+    ## [1]        0 20500000
+
+``` r
+library(ggplot2)
+
+ggplot(ames, aes(x = `Sale Price`)) +
+  geom_histogram(bins = 25, fill = "blue", color = "red") +
+  labs(
+    title = "Distribution of Sale Prices in Ames",
+    x = "Sale Price",
+    y = "Number of Homes"
+  )
+```
+
+![](README_files/figure-gfm/unnamed-chunk-4-1.png)<!-- -->
+
 Samara’s thoughts:
 
-Wyatt’s thoughts:
+Wyatt’s thoughts: Houses range from 0 to 20500000 dollars with the
+median being 170900. The distribution of sale prices is highly right
+skewed. This means that most homes sell for moderate prices with a few
+outliers of very high price. There are properties with a sale price of
+0, which probably means that the data was incorrectly recorded.
 
 (Name) thoughts:
 
@@ -104,7 +139,7 @@ Wyatt’s thoughts:
 
 Samara’s work:
 
-(Name) work:
+Wyatt’s work:
 
 (Name) work:
 

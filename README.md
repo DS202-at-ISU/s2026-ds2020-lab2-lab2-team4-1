@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit the README.Rmd file -->
 
-# Lab report \#1
+# Lab 02 Report
 
 Follow the instructions posted at
 <https://ds202-at-isu.github.io/labs.html> for the lab assignment. The
@@ -66,7 +66,79 @@ glimpse(ames)
     ## $ FirePlace               <chr> "Yes", "No", "No", "No", "No", "Yes", "Yes", "…
     ## $ Neighborhood            <fct> (28) Res: Brookside, (55) Res: Dakota Ridge, (…
 
-Samara’s thoughts:
+``` r
+summary(ames)
+```
+
+    ##   Parcel ID           Address                        Style     
+    ##  Length:6935        Length:6935        1 Story Frame    :3732  
+    ##  Class :character   Class :character   2 Story Frame    :1456  
+    ##  Mode  :character   Mode  :character   1 1/2 Story Frame: 711  
+    ##                                        Split Level Frame: 215  
+    ##                                        Split Foyer Frame: 156  
+    ##                                        (Other)          : 218  
+    ##                                        NA's             : 447  
+    ##                           Occupancy      Sale Date            Sale Price      
+    ##  Condominium                   : 711   Min.   :2017-07-03   Min.   :       0  
+    ##  Single-Family / Owner Occupied:4711   1st Qu.:2019-03-27   1st Qu.:       0  
+    ##  Townhouse                     : 745   Median :2020-09-22   Median :  170900  
+    ##  Two-Family Conversion         : 139   Mean   :2020-06-14   Mean   : 1017479  
+    ##  Two-Family Duplex             : 182   3rd Qu.:2021-10-14   3rd Qu.:  280000  
+    ##  NA's                          : 447   Max.   :2022-08-31   Max.   :20500000  
+    ##                                                                               
+    ##   Multi Sale          YearBuilt        Acres         TotalLivingArea (sf)
+    ##  Length:6935        Min.   :   0   Min.   : 0.0000   Min.   :   0        
+    ##  Class :character   1st Qu.:1956   1st Qu.: 0.1502   1st Qu.:1095        
+    ##  Mode  :character   Median :1978   Median : 0.2200   Median :1460        
+    ##                     Mean   :1976   Mean   : 0.2631   Mean   :1507        
+    ##                     3rd Qu.:2002   3rd Qu.: 0.2770   3rd Qu.:1792        
+    ##                     Max.   :2022   Max.   :12.0120   Max.   :6007        
+    ##                     NA's   :447    NA's   :89        NA's   :447         
+    ##     Bedrooms      FinishedBsmtArea (sf)  LotArea(sf)          AC           
+    ##  Min.   : 0.000   Min.   :  10.0        Min.   :     0   Length:6935       
+    ##  1st Qu.: 3.000   1st Qu.: 474.0        1st Qu.:  6553   Class :character  
+    ##  Median : 3.000   Median : 727.0        Median :  9575   Mode  :character  
+    ##  Mean   : 3.299   Mean   : 776.7        Mean   : 11466                     
+    ##  3rd Qu.: 4.000   3rd Qu.:1011.0        3rd Qu.: 12088                     
+    ##  Max.   :10.000   Max.   :6496.0        Max.   :523228                     
+    ##  NA's   :447      NA's   :2682          NA's   :89                         
+    ##   FirePlace                            Neighborhood 
+    ##  Length:6935        (27) Res: N Ames         : 854  
+    ##  Class :character   (37) Res: College Creek  : 652  
+    ##  Mode  :character   (57) Res: Investor Owned : 474  
+    ##                     (29) Res: Old Town       : 469  
+    ##                     (34) Res: Edwards        : 444  
+    ##                     (19) Res: North Ridge Hei: 420  
+    ##                     (Other)                  :3622
+
+``` r
+# ?ames
+```
+
+Samara’s thoughts: The variables included are ParcelID, Address, Style,
+Occupancy, Sale Date, Sale Price, Multi Sale, YearBuilt, Acres,
+TotalLivingArea(sf), Bedrooms, FinishedBsmtArea(sf), LotArea(sf), AC,
+FirePlace, and Neighborhood. Here is a list of the types, meanings, and
+data range for each of the variables: - ParcelID(String), just a
+character with ID - Address(String), property address in Ames, IA -
+Style (Factor variable), detailing the type of housing. Most popular
+ones are “1 Story Frame”, “2 Story Frame”, and “1 1/2 Story Frame” -
+Occupancy (Factory variable), type of housing. Most popular ones are
+“Condominium”, “Single-Family”, and “Townhouse”. - Sale Date (Date),
+date of sale, ranging from 2017-07-03 to 2022-08-31 - Sale Price
+(Number), is the price of sale (in US dollar), ranging from 0 to
+20,500,000 - Multi Sale (String), was this sale part of a package? -
+YearBuild (Number), year in which the house was built, ranging from 0 to
+2022 - Acres (Number), acres of the lot, ranging from 0 to 12.012 -
+TotalLivingArea (Number), total living area in sf, ranging from 0 to
+6007 - Bedrooms (Number), number of bedrooms, ranging from 0 to 10 -
+FinishedBsmtArea(Number), total area of the finished basement in sf,
+ranging from 10 to 6496 - LotArea (Number), total area of the lot in sf,
+ranging from 0 to 523,228 - AC (String), logical value of if the
+property has AC or not - FirePlace (String), logical balue of if the
+property has a FirePlace or not - Neighborhood (Factor), factor variable
+of a level that indicates the neighboorhood area in Ames. Popular ones
+are “N Ames”, “College Creek”, and “Investor Owned.”
 
 Wyatt’s thoughts: The data set contains 6935 rows and 16 columns, where
 rows represent a residential property sale. Key variables include year
@@ -74,24 +146,37 @@ built, acres, neighborhood, and TotalLivingArea. The main variable is
 Sale Price which represents the final sale price of the home. Depending
 on the variables listed above cna chang the range of the variables.
 
-(Name) thoughts:
+Tanisha’s thoughts: The dataset contains 6,935 rows and 16 columns,
+where each row represents a residential property sale. Some main
+variables include Year Built, Neighborhood, and Total Living Area, while
+the main variable is Sale Price, which shows the final selling price of
+the home its value can change based on other variables in the dataset.
 
-(Name) thoughts:
+(Name)’s thoughts:
 
 (Combined) As a team, we found that …
 
 # Step 2 result
 
-Samara’s thoughts:
+Samara’s thoughts: I do agree with the rest that sales price would be
+the main variable. I think other variables of interest could be
+sale-date, occupancy, bedrooms, totalLivingArea, and Neighboorhood. This
+is because these values would be the most influential variables that
+control sale Price, along with any other variables the others mentioned.
 
 Wyatt’s thoughts: The main variable is sales price, which means that its
 the price of each property sold in Ames. Its important because it shows
 the values of homes and allows us to look at how the other variables
 effect it.
 
-(Name) thoughts:
+Tanisha’s thoughts: Yes. The main variable of interest is Sale Price,
+which represents the final price at which a home is sold. The other
+variables, such as Year Built, Acres, Neighborhood, and Total Living
+Area, may help explain or influence the sale price.
 
-(Name) thoughts: (Combined) As a team, we found that …
+(Name)’s thoughts:
+
+(Combined) As a team, we found that …
 
 # Step 3 result
 
@@ -120,9 +205,28 @@ ggplot(ames, aes(x = `Sale Price`)) +
   )
 ```
 
-![](README_files/figure-gfm/unnamed-chunk-4-1.png)<!-- -->
+![](README_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
 
-Samara’s thoughts:
+``` r
+# ggplot with the log of sale price
+ggplot(ames, aes(x = log(`Sale Price`))) +
+  geom_histogram(bins = 50, fill = "blue", color = "red") +
+  labs(
+    title = "Distribution of Sale Prices in Ames",
+    x = "Sale Price",
+    y = "Number of Homes"
+  )
+```
+
+    ## Warning: Removed 2206 rows containing non-finite outside the scale range
+    ## (`stat_bin()`).
+
+![](README_files/figure-gfm/unnamed-chunk-6-1.png)<!-- -->
+
+Samara’s thoughts: The range of the variable “Sale Price” is between 0
+to 20,500,000. There are a few outliers both on the high price and low
+price end, but the majority of the sale prices are around the meadian at
+170900. The super high cost properties do increase the mean to 1017479.
 
 Wyatt’s thoughts: Houses range from 0 to 20500000 dollars with the
 median being 170900. The distribution of sale prices is highly right
@@ -130,13 +234,46 @@ skewed. This means that most homes sell for moderate prices with a few
 outliers of very high price. There are properties with a sale price of
 0, which probably means that the data was incorrectly recorded.
 
-(Name) thoughts:
+Tanisha’s thoughts: The main variable is Sale Price. Home prices range
+from \$0 to \$20,500,000, with a median price of \$170,900. The
+histogram shows the data is right-skewed, meaning most homes sell for
+moderate prices and only a few sell for very high prices. Although there
+are some outliers that have a price of \$0 which I believe could be due
+to missing data.
 
-(Name) thoughts:
+(Name)’s thoughts:
 
 (Combined) As a team, we found that …
 
 # Step 4 result
+
+Samara’s Plot:
+
+``` r
+summary(ames$Bedrooms)
+```
+
+    ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
+    ##   0.000   3.000   3.000   3.299   4.000  10.000     447
+
+``` r
+range(ames$Bedrooms, na.rm = TRUE)
+```
+
+    ## [1]  0 10
+
+``` r
+ames |>
+  ggplot(aes(x = Bedrooms)) +
+    geom_histogram(bins=10)
+```
+
+    ## Warning: Removed 447 rows containing non-finite outside the scale range
+    ## (`stat_bin()`).
+
+![](README_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
+
+Wyatt’s Plot:
 
 ``` r
 summary(ames$`TotalLivingArea (sf)`)
@@ -164,9 +301,35 @@ ggplot(ames, aes(x = `TotalLivingArea (sf)`)) +
     ## Warning: Removed 447 rows containing non-finite outside the scale range
     ## (`stat_bin()`).
 
-![](README_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
+![](README_files/figure-gfm/unnamed-chunk-8-1.png)<!-- -->
 
-Samara’s work:
+Tanisha’s Plot:
+
+``` r
+ames %>%
+  filter(`Sale Price` > 0) %>%
+  group_by(Neighborhood) %>%
+  summarize(avg_price = mean(`Sale Price`, na.rm = TRUE)) %>%
+  arrange(desc(avg_price)) %>%
+  slice_head(n = 15) %>%
+  ggplot(aes(x = avg_price, y = reorder(Neighborhood, avg_price))) +
+  geom_col(fill = "steelblue") +
+  scale_x_continuous(
+    labels = scales::dollar,
+    breaks = seq(100000, 12000000, by = 3000000)
+  ) +
+  labs(
+    title = "Top 15 Neighborhoods by Average Sale Price",
+    x = "Average Sale Price",
+    y = "Neighborhood"
+  ) +
+  theme_minimal()
+```
+
+![](README_files/figure-gfm/unnamed-chunk-9-1.png)<!-- -->
+
+Samara’s work: I chose the number of bedrooms as my variable. The range
+of this variable is between 0 and 10.
 
 Wyatt’s work: Total living Area measures the interior living space of
 the home. The histogram shows that fewer home have large living space.
@@ -176,6 +339,10 @@ increase. This is also seen in 3 with some of the outliers. However,
 some smaller homes can sell for higher, meaning that there are other
 factors as well.
 
-(Name) work:
-
-(Name) work:
+Tanisha’s work: I chose the variable Neighborhood to examine how
+location relates to Sale Price. The bar chart shows the top 15
+neighborhoods with the highest average sale prices. The results indicate
+that home prices vary across neighborhoods, suggesting that location
+influences property value. One neighborhood, Investor Owned, has a much
+higher average price than the others, likely due to a few very
+high-priced sales.

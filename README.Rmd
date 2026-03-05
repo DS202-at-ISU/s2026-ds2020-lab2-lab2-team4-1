@@ -14,7 +14,7 @@ library(classdata)
 data(ames, package = "classdata")
 ```
 
-# Lab report #1
+# Lab 02 Report
 
 Follow the instructions posted at https://ds202-at-isu.github.io/labs.html for the lab assignment. The work is meant to be finished during the lab time, but you have time until Monday evening to polish things.
 
@@ -36,7 +36,7 @@ Samara's thoughts:
 
 Wyatt's thoughts: The data set contains 6935 rows and 16 columns, where rows represent a residential property sale. Key variables include year built, acres, neighborhood, and TotalLivingArea. The main variable is Sale Price which represents the final sale price of the home. Depending on the variables listed above cna chang the range of the variables.
 
-(Name) thoughts:
+Tanisha's thoughts: The dataset contains 6,935 rows and 16 columns, where each row represents a residential property sale. Some main variables include Year Built, Neighborhood, and Total Living Area, while the main variable is Sale Price, which shows the final selling price of the home its value can change based on other variables in the dataset.
 
 (Name) thoughts:
 
@@ -48,9 +48,10 @@ Samara's thoughts:
 
 Wyatt's thoughts: The main variable is sales price, which means that its the price of each property sold in Ames. Its important because it shows the values of homes and allows us to look at how the other variables effect it. 
 
-(Name) thoughts:
+Tanisha's thoughts: Yes. The main variable of interest is Sale Price, which represents the final price at which a home is sold. The other variables, such as Year Built, Acres, Neighborhood, and Total Living Area, may help explain or influence the sale price.
 
 (Name) thoughts:
+
 (Combined) As a team, we found that ...
 
 # Step 3 result
@@ -76,7 +77,7 @@ Samara's thoughts:
 
 Wyatt's thoughts: Houses range from 0 to 20500000 dollars with the median being 170900. The distribution of sale prices is highly right skewed. This means that most homes sell for moderate prices with a few outliers of very high price. There are properties with a sale price of 0, which probably means that the data was incorrectly recorded.
 
-(Name) thoughts:
+Tanisha's thoughts: The main variable is Sale Price. Home prices range from $0 to $20,500,000, with a median price of $170,900. The histogram shows the data is right-skewed, meaning most homes sell for moderate prices and only a few sell for very high prices. Although there are some outliers that have a price of $0 which I believe could be due to missing data.
 
 (Name) thoughts:
 
@@ -101,6 +102,6 @@ Samara's work:
 
 Wyatt's work: Total living Area measures the interior living space of the home. The histogram shows that fewer home have large living space. It is right skewed meaning that large homes are not common. The relationship between them is positive as when one increases they both increase. This is also seen in 3 with some of the outliers. However, some smaller homes can sell for higher, meaning that there are other factors as well. 
 
-(Name) work:
+Tanisha's work: We chose the variable: Total Living Area. Total Living Area measures the interior size of a home. The values range from very small homes to homes with over 6,000 square feet. The histogram is right-skewed, meaning most homes have moderate living space and very large homes are less common. The scatterplot shows a positive relationship with Sale Price i.e. homes with larger living areas generally sell for higher prices. However, some smaller homes still sell for high prices, suggesting other factors like location also affect price.
 
 (Name) work:

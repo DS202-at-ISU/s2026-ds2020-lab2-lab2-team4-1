@@ -38,8 +38,6 @@ Wyatt's thoughts: The data set contains 6935 rows and 16 columns, where rows rep
 
 Tanisha's thoughts: The dataset contains 6,935 rows and 16 columns, where each row represents a residential property sale. Some main variables include Year Built, Neighborhood, and Total Living Area, while the main variable is Sale Price, which shows the final selling price of the home its value can change based on other variables in the dataset.
 
-(Name) thoughts:
-
 (Combined) As a team, we found that ...
 
 # Step 2 result
@@ -49,8 +47,6 @@ Samara's thoughts:
 Wyatt's thoughts: The main variable is sales price, which means that its the price of each property sold in Ames. Its important because it shows the values of homes and allows us to look at how the other variables effect it. 
 
 Tanisha's thoughts: Yes. The main variable of interest is Sale Price, which represents the final price at which a home is sold. The other variables, such as Year Built, Acres, Neighborhood, and Total Living Area, may help explain or influence the sale price.
-
-(Name) thoughts:
 
 (Combined) As a team, we found that ...
 
@@ -79,8 +75,6 @@ Wyatt's thoughts: Houses range from 0 to 20500000 dollars with the median being 
 
 Tanisha's thoughts: The main variable is Sale Price. Home prices range from $0 to $20,500,000, with a median price of $170,900. The histogram shows the data is right-skewed, meaning most homes sell for moderate prices and only a few sell for very high prices. Although there are some outliers that have a price of $0 which I believe could be due to missing data.
 
-(Name) thoughts:
-
 (Combined) As a team, we found that ...
 
 # Step 4 result
@@ -98,10 +92,29 @@ ggplot(ames, aes(x = `TotalLivingArea (sf)`)) +
   )
 ```
 
+```{r}
+ames %>%
+  filter(`Sale Price` > 0) %>%
+  group_by(Neighborhood) %>%
+  summarize(avg_price = mean(`Sale Price`, na.rm = TRUE)) %>%
+  arrange(desc(avg_price)) %>%
+  slice_head(n = 15) %>%
+  ggplot(aes(x = avg_price, y = reorder(Neighborhood, avg_price))) +
+  geom_col(fill = "steelblue") +
+  scale_x_continuous(
+    labels = scales::dollar,
+    breaks = seq(100000, 12000000, by = 3000000)
+  ) +
+  labs(
+    title = "Top 15 Neighborhoods by Average Sale Price",
+    x = "Average Sale Price",
+    y = "Neighborhood"
+  ) +
+  theme_minimal()
+```
+
 Samara's work:
 
 Wyatt's work: Total living Area measures the interior living space of the home. The histogram shows that fewer home have large living space. It is right skewed meaning that large homes are not common. The relationship between them is positive as when one increases they both increase. This is also seen in 3 with some of the outliers. However, some smaller homes can sell for higher, meaning that there are other factors as well. 
 
-Tanisha's work: We chose the variable: Total Living Area. Total Living Area measures the interior size of a home. The values range from very small homes to homes with over 6,000 square feet. The histogram is right-skewed, meaning most homes have moderate living space and very large homes are less common. The scatterplot shows a positive relationship with Sale Price i.e. homes with larger living areas generally sell for higher prices. However, some smaller homes still sell for high prices, suggesting other factors like location also affect price.
-
-(Name) work:
+Tanisha's work: I chose the variable Neighborhood to examine how location relates to Sale Price. The bar chart shows the top 15 neighborhoods with the highest average sale prices. The results indicate that home prices vary across neighborhoods, suggesting that location influences property value. One neighborhood, Investor Owned, has a much higher average price than the others, likely due to a few very high-priced sales.

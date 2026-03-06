@@ -17,6 +17,10 @@ grading once the due date is passed. Submit a link to your repository on
 Canvas (only one submission per team) to signal to the instructors that
 you are done with your submission.
 
+# TLDR
+
+(Summary)
+
 # Step 1 result
 
 ``` r
@@ -247,7 +251,14 @@ to missing data.
 
 # Step 4 result
 
-Samara’s Plot:
+Samara’s work:
+
+I chose the number of bedrooms as my variable. The range of this
+variable is between 0 and 10, with the most common number of bedrooms at
+3. There is also a fairly symmetric distribution around the mean at
+about 3.3.
+
+Summary, range and plot of bedrooms:
 
 ``` r
 summary(ames$Bedrooms)
@@ -264,14 +275,34 @@ range(ames$Bedrooms, na.rm = TRUE)
 
 ``` r
 ames |>
-  ggplot(aes(x = Bedrooms)) +
-    geom_histogram(bins=10)
+  ggplot(aes(x = factor(Bedrooms))) +
+    geom_bar(fill='blue') +
+      labs(title = "Distribution of bedrooms", x = "Number of bedrooms", y = "Count")
 ```
 
-    ## Warning: Removed 447 rows containing non-finite outside the scale range
-    ## (`stat_bin()`).
-
 ![](README_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
+
+Plot of bedrooms vs sale price:
+
+``` r
+ames |>
+  ggplot(aes(x = factor(Bedrooms), y = log10(`Sale Price`))) +
+    geom_boxplot(fill = 'blue') + labs(title = "Sale Price by Number of Bedrooms", x  = "Number of Bedrooms", y ="Log(Sale Price)")
+```
+
+    ## Warning: Removed 2206 rows containing non-finite outside the scale range
+    ## (`stat_boxplot()`).
+
+![](README_files/figure-gfm/unnamed-chunk-8-1.png)<!-- -->
+
+Now, overall, the relationship between the Sale Price and number of
+bedrooms, is that the median of the Sale Price increases as the number
+of bedrooms increase. Now, something interesting is that when Number of
+Bedrooms = 1, there is a super large upper quartile, meaning that there
+are numerous 1 bedrooms that were sold at higher prices, which follows
+up on the oddity found.
+
+------------------------------------------------------------------------
 
 Wyatt’s Plot:
 
@@ -301,7 +332,17 @@ ggplot(ames, aes(x = `TotalLivingArea (sf)`)) +
     ## Warning: Removed 447 rows containing non-finite outside the scale range
     ## (`stat_bin()`).
 
-![](README_files/figure-gfm/unnamed-chunk-8-1.png)<!-- -->
+![](README_files/figure-gfm/unnamed-chunk-9-1.png)<!-- -->
+
+Wyatt’s work: Total living Area measures the interior living space of
+the home. The histogram shows that fewer home have large living space.
+It is right skewed meaning that large homes are not common. The
+relationship between them is positive as when one increases they both
+increase. This is also seen in 3 with some of the outliers. However,
+some smaller homes can sell for higher, meaning that there are other
+factors as well.
+
+------------------------------------------------------------------------
 
 Tanisha’s Plot:
 
@@ -326,18 +367,7 @@ ames %>%
   theme_minimal()
 ```
 
-![](README_files/figure-gfm/unnamed-chunk-9-1.png)<!-- -->
-
-Samara’s work: I chose the number of bedrooms as my variable. The range
-of this variable is between 0 and 10.
-
-Wyatt’s work: Total living Area measures the interior living space of
-the home. The histogram shows that fewer home have large living space.
-It is right skewed meaning that large homes are not common. The
-relationship between them is positive as when one increases they both
-increase. This is also seen in 3 with some of the outliers. However,
-some smaller homes can sell for higher, meaning that there are other
-factors as well.
+![](README_files/figure-gfm/unnamed-chunk-10-1.png)<!-- -->
 
 Tanisha’s work: I chose the variable Neighborhood to examine how
 location relates to Sale Price. The bar chart shows the top 15
@@ -346,3 +376,7 @@ that home prices vary across neighborhoods, suggesting that location
 influences property value. One neighborhood, Investor Owned, has a much
 higher average price than the others, likely due to a few very
 high-priced sales.
+
+------------------------------------------------------------------------
+
+(Name)’s work:

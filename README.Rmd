@@ -6,7 +6,7 @@ output: github_document
 
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE)
 
 library(tidyverse)
 library(classdata)
@@ -35,7 +35,6 @@ glimpse(ames)
 
 ```{r}
 summary(ames)
-# ?ames
 ```
 
 Samara's thoughts: The variables included are ParcelID, Address, Style, Occupancy, Sale Date, Sale Price, Multi Sale, YearBuilt, Acres, TotalLivingArea(sf), Bedrooms, FinishedBsmtArea(sf), LotArea(sf), AC, FirePlace, and Neighborhood. Here is a list of the types, meanings, and data range for each of the variables:
@@ -69,8 +68,6 @@ Samara's thoughts: I do agree with the rest that sales price would be the main v
 Wyatt's thoughts: The main variable is sales price, which means that its the price of each property sold in Ames. Its important because it shows the values of homes and allows us to look at how the other variables effect it. 
 
 Tanisha's thoughts: Yes. The main variable of interest is Sale Price, which represents the final price at which a home is sold. The other variables, such as Year Built, Acres, Neighborhood, and Total Living Area, may help explain or influence the sale price.
-
-(Name)'s thoughts:
 
 (Combined) As a team, we found that ...
 
@@ -186,6 +183,6 @@ ames %>%
   theme_minimal()
 ```
 
-Tanisha's work: I chose the variable Neighborhood to examine how location relates to Sale Price. The bar chart shows the top 15 neighborhoods with the highest average sale prices. The results indicate that home prices vary across neighborhoods, suggesting that location influences property value. One neighborhood, Investor Owned, has a much higher average price than the others, likely due to a few very high-priced sales.
+Tanisha's work: I chose the variable Neighborhood to examine how location relates to Sale Price. The bar chart shows the top 15 neighborhoods with the highest average sale prices. The results indicate that home prices vary across neighborhoods, suggesting that location influences property value. One neighborhood, Investor Owned, has a much higher average price than the others, likely due to a few very high-priced sales influencing the overall data.
 
 ---

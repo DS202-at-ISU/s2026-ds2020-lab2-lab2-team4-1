@@ -23,8 +23,6 @@ Include your answers in this document (Rmd file). Make sure that it knits proper
 All submissions to the github repo will be automatically uploaded for grading once the due date is passed.
 Submit a link to your repository on Canvas (only one submission per team) to signal to the instructors that you are done with your submission.
 
-# TLDR
-(Summary)
 
 # Step 1 result
 ```{r}
@@ -61,8 +59,6 @@ Samara's thoughts: The variables included are ParcelID, Address, Style, Occupanc
 Wyatt's thoughts: The data set contains 6935 rows and 16 columns, where rows represent a residential property sale. Key variables include year built, acres, neighborhood, and TotalLivingArea. The main variable is Sale Price which represents the final sale price of the home. Depending on the variables listed above cna chang the range of the variables.
 
 Tanisha's thoughts: The dataset contains 6,935 rows and 16 columns, where each row represents a residential property sale. Some main variables include Year Built, Neighborhood, and Total Living Area, while the main variable is Sale Price, which shows the final selling price of the home its value can change based on other variables in the dataset.
-
-(Name)'s thoughts:
 
 (Combined) As a team, we found that ...
 
@@ -113,8 +109,6 @@ Samara's thoughts: The range of the variable "Sale Price" is between 0 to 20,500
 Wyatt's thoughts: Houses range from 0 to 20500000 dollars with the median being 170900. The distribution of sale prices is highly right skewed. This means that most homes sell for moderate prices with a few outliers of very high price. There are properties with a sale price of 0, which probably means that the data was incorrectly recorded.
 
 Tanisha's thoughts: The main variable is Sale Price. Home prices range from $0 to $20,500,000, with a median price of $170,900. The histogram shows the data is right-skewed, meaning most homes sell for moderate prices and only a few sell for very high prices. Although there are some outliers that have a price of $0 which I believe could be due to missing data.
-
-(Name)'s thoughts:
 
 (Combined) As a team, we found that ...
 
@@ -195,5 +189,3 @@ ames %>%
 Tanisha's work: I chose the variable Neighborhood to examine how location relates to Sale Price. The bar chart shows the top 15 neighborhoods with the highest average sale prices. The results indicate that home prices vary across neighborhoods, suggesting that location influences property value. One neighborhood, Investor Owned, has a much higher average price than the others, likely due to a few very high-priced sales.
 
 ---
-
-(Name)'s work:

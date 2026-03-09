@@ -17,10 +17,6 @@ grading once the due date is passed. Submit a link to your repository on
 Canvas (only one submission per team) to signal to the instructors that
 you are done with your submission.
 
-# TLDR
-
-(Summary)
-
 # Step 1 result
 
 ``` r
@@ -115,12 +111,8 @@ summary(ames)
     ##                     (19) Res: North Ridge Hei: 420  
     ##                     (Other)                  :3622
 
-``` r
-# ?ames
-```
-
-Samara’s thoughts: The variables included are ParcelID, Address, Style,
-Occupancy, Sale Date, Sale Price, Multi Sale, YearBuilt, Acres,
+**Samara’s thoughts:** The variables included are ParcelID, Address,
+Style, Occupancy, Sale Date, Sale Price, Multi Sale, YearBuilt, Acres,
 TotalLivingArea(sf), Bedrooms, FinishedBsmtArea(sf), LotArea(sf), AC,
 FirePlace, and Neighborhood. Here is a list of the types, meanings, and
 data range for each of the variables: - ParcelID(String), just a
@@ -144,43 +136,60 @@ property has a FirePlace or not - Neighborhood (Factor), factor variable
 of a level that indicates the neighboorhood area in Ames. Popular ones
 are “N Ames”, “College Creek”, and “Investor Owned.”
 
-Wyatt’s thoughts: The data set contains 6935 rows and 16 columns, where
-rows represent a residential property sale. Key variables include year
-built, acres, neighborhood, and TotalLivingArea. The main variable is
-Sale Price which represents the final sale price of the home. Depending
-on the variables listed above cna chang the range of the variables.
+**Wyatt’s thoughts:** The data set contains 6935 rows and 16 columns,
+where rows represent a residential property sale. Key variables include
+year built, acres, neighborhood, and TotalLivingArea. The main variable
+is Sale Price which represents the final sale price of the home.
+Depending on the variables listed above cna chang the range of the
+variables.
 
-Tanisha’s thoughts: The dataset contains 6,935 rows and 16 columns,
+**Tanisha’s thoughts:** The dataset contains 6,935 rows and 16 columns,
 where each row represents a residential property sale. Some main
 variables include Year Built, Neighborhood, and Total Living Area, while
 the main variable is Sale Price, which shows the final selling price of
 the home its value can change based on other variables in the dataset.
 
-(Name)’s thoughts:
-
-(Combined) As a team, we found that …
+**(Combined) As a team, we found that** the dataset provides detailed
+information about residential property sales in Ames, Iowa. Each of the
+6,935 rows represents a single property sale, while the 16 columns
+describe different characteristics of the property such as its location,
+size, structure, and sale details. Important variables include Sale
+Price, which represents the final selling price of the property, along
+with factors like YearBuilt, Neighborhood, TotalLivingArea, Acres, and
+Bedrooms that may influence the price. The dataset also includes
+categorical variables such as Style, Occupancy, and Neighborhood, as
+well as logical indicators like AC and FirePlace. By examining these
+variables together, we can better understand patterns in housing
+characteristics and how different factors may affect property values in
+Ames.
 
 # Step 2 result
 
-Samara’s thoughts: I do agree with the rest that sales price would be
-the main variable. I think other variables of interest could be
+**Samara’s thoughts:** I do agree with the rest that sales price would
+be the main variable. I think other variables of interest could be
 sale-date, occupancy, bedrooms, totalLivingArea, and Neighboorhood. This
 is because these values would be the most influential variables that
 control sale Price, along with any other variables the others mentioned.
 
-Wyatt’s thoughts: The main variable is sales price, which means that its
-the price of each property sold in Ames. Its important because it shows
-the values of homes and allows us to look at how the other variables
-effect it.
+**Wyatt’s thoughts:** The main variable is sales price, which means that
+its the price of each property sold in Ames. Its important because it
+shows the values of homes and allows us to look at how the other
+variables effect it.
 
-Tanisha’s thoughts: Yes. The main variable of interest is Sale Price,
-which represents the final price at which a home is sold. The other
-variables, such as Year Built, Acres, Neighborhood, and Total Living
-Area, may help explain or influence the sale price.
+**Tanisha’s thoughts:** Yes. The main variable of interest is Sale
+Price, which represents the final price at which a home is sold. The
+other variables, such as Year Built, Acres, Neighborhood, and Total
+Living Area, may help explain or influence the sale price.
 
-(Name)’s thoughts:
-
-(Combined) As a team, we found that …
+**(Combined) As a team, we found that** the main variable of interest in
+the dataset is Sale Price, since it represents the final price at which
+each property in Ames was sold. This variable is important because it
+reflects the value of homes and allows us to analyze how different
+property characteristics may influence that value. Other variables such
+as Sale Date, Occupancy, Bedrooms, TotalLivingArea, YearBuilt, Acres,
+and Neighborhood are also important because they can help explain
+differences in sale prices. By examining how these variables relate to
+Sale Price, we can better understand the factors that affect.
 
 # Step 3 result
 
@@ -222,36 +231,40 @@ ggplot(ames, aes(x = log(`Sale Price`))) +
   )
 ```
 
-    ## Warning: Removed 2206 rows containing non-finite outside the scale range
-    ## (`stat_bin()`).
-
 ![](README_files/figure-gfm/unnamed-chunk-6-1.png)<!-- -->
 
-Samara’s thoughts: The range of the variable “Sale Price” is between 0
-to 20,500,000. There are a few outliers both on the high price and low
+**Samara’s thoughts:** The range of the variable “Sale Price” is between
+0 to 20,500,000. There are a few outliers both on the high price and low
 price end, but the majority of the sale prices are around the meadian at
 170900. The super high cost properties do increase the mean to 1017479.
 
-Wyatt’s thoughts: Houses range from 0 to 20500000 dollars with the
+**Wyatt’s thoughts:** Houses range from 0 to 20500000 dollars with the
 median being 170900. The distribution of sale prices is highly right
 skewed. This means that most homes sell for moderate prices with a few
 outliers of very high price. There are properties with a sale price of
 0, which probably means that the data was incorrectly recorded.
 
-Tanisha’s thoughts: The main variable is Sale Price. Home prices range
-from \$0 to \$20,500,000, with a median price of \$170,900. The
+**Tanisha’s thoughts:** The main variable is Sale Price. Home prices
+range from \$0 to \$20,500,000, with a median price of \$170,900. The
 histogram shows the data is right-skewed, meaning most homes sell for
 moderate prices and only a few sell for very high prices. Although there
 are some outliers that have a price of \$0 which I believe could be due
 to missing data.
 
-(Name)’s thoughts:
-
-(Combined) As a team, we found that …
+**(Combined) As a team, we found that** the Sale Price variable ranges
+from \$0 to \$20,500,000, with a median value of about \$170,900. The
+distribution of sale prices is right-skewed, meaning that most homes
+sell for moderate prices while a small number of homes sell for
+extremely high prices, creating high-value outliers that increase the
+mean. We also noticed that some properties have a sale price of \$0,
+which likely indicates missing, incorrect, or special-case data rather
+than actual home sales. Overall, the data shows that most homes in Ames
+sell near the median price, with only a few very expensive properties
+affecting the overall distribution.
 
 # Step 4 result
 
-Samara’s work:
+**Samara’s work:**
 
 I chose the number of bedrooms as my variable. The range of this
 variable is between 0 and 10, with the most common number of bedrooms at
@@ -290,9 +303,6 @@ ames |>
     geom_boxplot(fill = 'blue') + labs(title = "Sale Price by Number of Bedrooms", x  = "Number of Bedrooms", y ="Log(Sale Price)")
 ```
 
-    ## Warning: Removed 2206 rows containing non-finite outside the scale range
-    ## (`stat_boxplot()`).
-
 ![](README_files/figure-gfm/unnamed-chunk-8-1.png)<!-- -->
 
 Now, overall, the relationship between the Sale Price and number of
@@ -304,7 +314,7 @@ up on the oddity found.
 
 ------------------------------------------------------------------------
 
-Wyatt’s Plot:
+**Wyatt’s Plot:**
 
 ``` r
 summary(ames$`TotalLivingArea (sf)`)
@@ -329,9 +339,6 @@ ggplot(ames, aes(x = `TotalLivingArea (sf)`)) +
   )
 ```
 
-    ## Warning: Removed 447 rows containing non-finite outside the scale range
-    ## (`stat_bin()`).
-
 ![](README_files/figure-gfm/unnamed-chunk-9-1.png)<!-- -->
 
 Wyatt’s work: Total living Area measures the interior living space of
@@ -344,7 +351,7 @@ factors as well.
 
 ------------------------------------------------------------------------
 
-Tanisha’s Plot:
+**Tanisha’s Plot:**
 
 ``` r
 ames %>%
@@ -375,8 +382,6 @@ neighborhoods with the highest average sale prices. The results indicate
 that home prices vary across neighborhoods, suggesting that location
 influences property value. One neighborhood, Investor Owned, has a much
 higher average price than the others, likely due to a few very
-high-priced sales.
+high-priced sales influencing the overall data.
 
 ------------------------------------------------------------------------
-
-(Name)’s work:

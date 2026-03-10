@@ -8,6 +8,7 @@ output: github_document
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, warning = FALSE)
 
+
 library(tidyverse)
 library(classdata)
 
@@ -59,7 +60,11 @@ summary(ames)
 
 **Tanisha's thoughts:** The dataset contains 6,935 rows and 16 columns, where each row represents a residential property sale. Some main variables include Year Built, Neighborhood, and Total Living Area, while the main variable is Sale Price, which shows the final selling price of the home its value can change based on other variables in the dataset.
 
+**Bhavika's thoughts:** The dataset has 6935 rows and 16 colunms wherein eacg row represents a property sale. The columns describe various properties like location, Size, yearbuilt Etc. The main variable is sale price which is depnedent on the price of other variables in the dataset.
+
+
 **(Combined) As a team, we found that** the dataset provides detailed information about residential property sales in Ames, Iowa. Each of the 6,935 rows represents a single property sale, while the 16 columns describe different characteristics of the property such as its location, size, structure, and sale details. Important variables include Sale Price, which represents the final selling price of the property, along with factors like YearBuilt, Neighborhood, TotalLivingArea, Acres, and Bedrooms that may influence the price. The dataset also includes categorical variables such as Style, Occupancy, and Neighborhood, as well as logical indicators like AC and FirePlace. By examining these variables together, we can better understand patterns in housing characteristics and how different factors may affect property values in Ames.
+
 
 # Step 2 result
 
@@ -68,6 +73,8 @@ summary(ames)
 **Wyatt's thoughts:** The main variable is sales price, which means that its the price of each property sold in Ames. Its important because it shows the values of homes and allows us to look at how the other variables effect it. 
 
 **Tanisha's thoughts:** Yes. The main variable of interest is Sale Price, which represents the final price at which a home is sold. The other variables, such as Year Built, Acres, Neighborhood, and Total Living Area, may help explain or influence the sale price.
+
+**Bhavika's thoughts:** The main variable is Sale price as it is determined by all other variables.Changes in other variables can affect it or influence it.
 
 **(Combined) As a team, we found that** the main variable of interest in the dataset is Sale Price, since it represents the final price at which each property in Ames was sold. This variable is important because it reflects the value of homes and allows us to analyze how different property characteristics may influence that value. Other variables such as Sale Date, Occupancy, Bedrooms, TotalLivingArea, YearBuilt, Acres, and Neighborhood are also important because they can help explain differences in sale prices. By examining how these variables relate to Sale Price, we can better understand the factors that affect.
 
@@ -106,6 +113,8 @@ ggplot(ames, aes(x = log(`Sale Price`))) +
 **Wyatt's thoughts:** Houses range from 0 to 20500000 dollars with the median being 170900. The distribution of sale prices is highly right skewed. This means that most homes sell for moderate prices with a few outliers of very high price. There are properties with a sale price of 0, which probably means that the data was incorrectly recorded.
 
 **Tanisha's thoughts:** The main variable is Sale Price. Home prices range from $0 to $20,500,000, with a median price of $170,900. The histogram shows the data is right-skewed, meaning most homes sell for moderate prices and only a few sell for very high prices. Although there are some outliers that have a price of $0 which I believe could be due to missing data.
+
+**Bhavika's thoughts:** The price range is from $0 to $20500000 and the median price is $170900 meaning half of the homes were sold for more than this and the rest were sold for lesser.The histogram shows that most homes are sold in the lower to middle price ranges, while only a small number of homes are sold at very high prices. 0 probably means missing data.
 
 **(Combined) As a team, we found that** the Sale Price variable ranges from $0 to $20,500,000, with a median value of about $170,900. The distribution of sale prices is right-skewed, meaning that most homes sell for moderate prices while a small number of homes sell for extremely high prices, creating high-value outliers that increase the mean. We also noticed that some properties have a sale price of $0, which likely indicates missing, incorrect, or special-case data rather than actual home sales. Overall, the data shows that most homes in Ames sell near the median price, with only a few very expensive properties affecting the overall distribution.
 
@@ -186,3 +195,19 @@ ames %>%
 Tanisha's work: I chose the variable Neighborhood to examine how location relates to Sale Price. The bar chart shows the top 15 neighborhoods with the highest average sale prices. The results indicate that home prices vary across neighborhoods, suggesting that location influences property value. One neighborhood, Investor Owned, has a much higher average price than the others, likely due to a few very high-priced sales influencing the overall data.
 
 ---
+**Bhavika's Plot:**
+```{r}
+ames %>%
+  filter(`Sale Price` > 0) %>%
+  ggplot(aes(x = `YearBuilt`, y = `Sale Price`)) +
+  geom_point(alpha = 0.4) +
+  scale_y_continuous(labels = scales::dollar) +
+  labs(
+    title = "Relationship Between Year Built and Sale Price",
+    x = "YearBuilt",
+    y = "Sale Price"
+  ) +
+  theme_minimal()
+```
+Bhavika's work:I selected the variable Year Built to investigate the relationship between the Sale Price and the age of a home. The years when the homes were built are displayed on the bar chart, indicating that the neighborhoods which have the highest average of homes built have new houses. The findings indicate that the sale price can also be higher in those neighbourhoods where the homes were constructed more recently, which means that newer houses can be more valuable. This indicates that an age of a home may be one of the determining factors that affect its selling price.
+

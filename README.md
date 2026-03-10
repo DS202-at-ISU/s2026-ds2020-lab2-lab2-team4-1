@@ -149,6 +149,11 @@ variables include Year Built, Neighborhood, and Total Living Area, while
 the main variable is Sale Price, which shows the final selling price of
 the home its value can change based on other variables in the dataset.
 
+**Bhavika’s thoughts:** The dataset has 6935 rows and 16 colunms wherein
+eacg row represents a property sale. The columns describe various
+properties like location, Size, yearbuilt Etc. The main variable is sale
+price which is depnedent on the price of other variables in the dataset.
+
 **(Combined) As a team, we found that** the dataset provides detailed
 information about residential property sales in Ames, Iowa. Each of the
 6,935 rows represents a single property sale, while the 16 columns
@@ -180,6 +185,10 @@ variables effect it.
 Price, which represents the final price at which a home is sold. The
 other variables, such as Year Built, Acres, Neighborhood, and Total
 Living Area, may help explain or influence the sale price.
+
+**Bhavika’s thoughts:** The main variable is Sale price as it is
+determined by all other variables.Changes in other variables can affect
+it or influence it.
 
 **(Combined) As a team, we found that** the main variable of interest in
 the dataset is Sale Price, since it represents the final price at which
@@ -250,6 +259,13 @@ histogram shows the data is right-skewed, meaning most homes sell for
 moderate prices and only a few sell for very high prices. Although there
 are some outliers that have a price of \$0 which I believe could be due
 to missing data.
+
+**Bhavika’s thoughts:** The price range is from \$0 to \$20500000 and
+the median price is \$170900 meaning half of the homes were sold for
+more than this and the rest were sold for lesser.The histogram shows
+that most homes are sold in the lower to middle price ranges, while only
+a small number of homes are sold at very high prices. 0 probably means
+missing data.
 
 **(Combined) As a team, we found that** the Sale Price variable ranges
 from \$0 to \$20,500,000, with a median value of about \$170,900. The
@@ -385,3 +401,30 @@ higher average price than the others, likely due to a few very
 high-priced sales influencing the overall data.
 
 ------------------------------------------------------------------------
+
+**Bhavika’s Plot:**
+
+``` r
+ames %>%
+  filter(`Sale Price` > 0) %>%
+  ggplot(aes(x = `YearBuilt`, y = `Sale Price`)) +
+  geom_point(alpha = 0.4) +
+  scale_y_continuous(labels = scales::dollar) +
+  labs(
+    title = "Relationship Between Year Built and Sale Price",
+    x = "YearBuilt",
+    y = "Sale Price"
+  ) +
+  theme_minimal()
+```
+
+![](README_files/figure-gfm/unnamed-chunk-11-1.png)<!-- --> Bhavika’s
+work:I selected the variable Year Built to investigate the relationship
+between the Sale Price and the age of a home. The years when the homes
+were built are displayed on the bar chart, indicating that the
+neighborhoods which have the highest average of homes built have new
+houses. The findings indicate that the sale price can also be higher in
+those neighbourhoods where the homes were constructed more recently,
+which means that newer houses can be more valuable. This indicates that
+an age of a home may be one of the determining factors that affect its
+selling price.
